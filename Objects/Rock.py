@@ -1,4 +1,5 @@
-from GameFrame import RoomObject
+from GameFrame import RoomObject, Globals
+import random
 
 class Rock(RoomObject):
     """
@@ -15,3 +16,24 @@ class Rock(RoomObject):
         # set image
         image = self.load_image("Rock.png")
         self.set_image(image,60,60)
+
+        # set travel direction
+        angle = random.randint(135,225)
+        self.set_direction(angle, 10)
+
+    def step(self):
+        """
+        Determines what happens to the Rock on each tick of the game clock
+        """
+        self.keep_in_room()
+        
+    def keep_in_room(self):
+        """
+        Keeps the Rock inside the top and bottom room limits
+        """
+        if self.y < 0:
+            self.y = 0
+            self.y_speed *= -1
+        elif self.y > Globals.SCREEN_HEIGHT - self.height:
+            self.y = Globals.SCREEN_HEIGHT - self.height
+            self.y_speed *= -1
