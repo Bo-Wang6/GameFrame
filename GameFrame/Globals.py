@@ -34,7 +34,7 @@ class Globals:
     window_name = 'INTERSTELLAR EXPLORATION'
 
     # - Set the order of the rooms - #
-    levels = ["WelcomeScreen", "Maze", "ScrollingShooter", "BreakOut"]
+    levels = ["WelcomeScreen", "GamePlay", "Maze", "ScrollingShooter", "BreakOut"]
 
     # - Set the starting level - #
     start_level = 0
@@ -55,3 +55,4 @@ class Globals:
 
     total_count = 0
     destroyed_count = 0
+
