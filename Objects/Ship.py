@@ -1,4 +1,4 @@
-from GameFrame import RoomObject
+from GameFrame import RoomObject, Globals
 import pygame
 
 class Ship(RoomObject):
@@ -32,4 +32,22 @@ class Ship(RoomObject):
             self.x -= 7.5
         elif key[pygame.K_d]:
             self.x += 7.5
-        
+    
+    def keep_in_room(self):
+        """
+        Keeps the ship inside the room
+        """
+        if self.y < 0:
+            self.y = 0
+        elif self.y + self.height> Globals.SCREEN_HEIGHT:
+            self.y = Globals.SCREEN_HEIGHT - self.height    
+        if self.x < 0:
+            self.x = 0
+        elif self.x + self.width> Globals.SCREEN_WIDTH:
+            self.x = Globals.SCREEN_WIDTH - self.width 
+
+    def step(self):
+        """
+        Determine what happens to the Ship on each click of the game clock
+        """
+        self.keep_in_room()
