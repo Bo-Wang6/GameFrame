@@ -1,5 +1,6 @@
 from GameFrame import RoomObject, Globals
 from Objects.Rock import Rock
+from Objects.Python import Python
 import random
 
 class Boss (RoomObject):
@@ -24,6 +25,10 @@ class Boss (RoomObject):
         Rock_spawn_time = random.randint(15,150)
         self.set_timer(Rock_spawn_time, self.spawn_Rock)
 
+        # start Python timer
+        Python_spawn_time = random.randint(30, 200)
+        self.set_timer(Python_spawn_time, self.spawn_Python)
+
     def keep_in_room(self):
         """
         Keeps the Boss inside the top and bottom room limits
@@ -45,3 +50,16 @@ class Boss (RoomObject):
         # reset time for next Rock spawn
         Rock_spawn_time = random.randint(15, 150)
         self.set_timer(Rock_spawn_time, self.spawn_Rock)
+
+    def spawn_Python(self):
+        """
+        Randomly spawns a new Python
+        """
+        # spawn Python and add to room
+        new_Python = Python(self.room, self.x, self.y + self.height/2)
+        self.room.add_room_object(new_Python)
+        
+        # reset timer for next Python spawn
+        Python_spawn_time = random.randint(30, 200)
+        self.set_timer(Python_spawn_time, self.spawn_Python)
+

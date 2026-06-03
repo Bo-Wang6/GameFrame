@@ -61,12 +61,11 @@ class Ship(RoomObject):
         """
         Shoots a laser from the ship
         """
-        new_laser = Laser(self.room, 
-                          self.x + self.width, 
-                          self.y + self.height/2 - 4)
-        self.room.add_room_object(new_laser)
-        self.can_shoot = False
-        self.set_timer(10,self.reset_shot)
+        if self.can_shoot:
+            new_laser = Laser(self.room, self.x + self.width, self.y + self.height/2 - 4)
+            self.room.add_room_object(new_laser)
+            self.can_shoot = False
+            self.set_timer(10,self.reset_shot)
             
     def reset_shot(self):
         """
