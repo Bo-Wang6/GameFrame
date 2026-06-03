@@ -29,6 +29,7 @@ class Rock(RoomObject):
         Determines what happens to the Rock on each tick of the game clock
         """
         self.keep_in_room()
+        self.outside_of_room()
         
     def keep_in_room(self):
         """
@@ -41,10 +42,25 @@ class Rock(RoomObject):
             self.y = Globals.SCREEN_HEIGHT - self.height
             self.y_speed *= -1
 
+    def outside_of_room(self):
+        """
+        removes asteroid that have exited the room
+        """
+        if self.x + self.width < 0:
+            print("asteroid deleted")
+            self.room.delete_object(self)
+
     def handle_collision(self, other, other_type):
         """
         Handles the collision events for the Rock
         """
         
         if other_type == "Ship":
-            self.room.running = False
+            self.room.delete_object(self)
+            Globals.LIVES -= 1
+            if Globals.LIVES > 0:
+                self.room.lives.update_image()
+            else:
+                self.room.running = False
+                Globals.LIVES = 3
+                Globals.SCORE = 0
