@@ -36,7 +36,7 @@ class Python(RoomObject):
         # ship collision
         if other_type == "Ship":
             self.room.delete_object(self)
-            self.room.score.update_score(20)
+            self.room.score.update_score(2)
             
     def outside_of_room(self):
         """

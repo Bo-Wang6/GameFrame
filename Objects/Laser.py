@@ -44,7 +44,12 @@ class Laser(RoomObject):
         """
         if other_type == "Rock":
             self.room.delete_object(other)
-            self.room.score.update_score(5)
+            self.room.score.update_score(1)
         elif other_type == "Python":
             self.room.delete_object(other)
-            self.room.score.update_score(-10)
+            self.room.score.update_score(-1)
+        elif other_type == "IDLE":
+            self.room.delete_obect(other)
+            self.room.score.update_score(+0)
+        self.room.delete_object(self)
+        

@@ -5,3 +5,4 @@ from Objects.Rock import Rock
 from Objects.Laser import Laser
 from Objects.Python import Python
 from Objects.Hud import Score, Lives
+from Objects.IDLE import IDLE

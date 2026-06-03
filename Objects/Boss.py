@@ -1,6 +1,7 @@
 from GameFrame import RoomObject, Globals
 from Objects.Rock import Rock
 from Objects.Python import Python
+from Objects.IDLE import IDLE
 import random
 
 class Boss (RoomObject):
@@ -28,6 +29,10 @@ class Boss (RoomObject):
         # start Python timer
         Python_spawn_time = random.randint(30, 200)
         self.set_timer(Python_spawn_time, self.spawn_Python)
+
+        # start Livesblock timer
+        IDLE_spawn_time = random.randint(30, 200)
+        self.set_timer(IDLE_spawn_time, self.spawn_IDLE)
 
     def keep_in_room(self):
         """
@@ -63,3 +68,14 @@ class Boss (RoomObject):
         Python_spawn_time = random.randint(30, 200)
         self.set_timer(Python_spawn_time, self.spawn_Python)
 
+    def spawn_IDLE(self):
+        """
+        Randomly spawns a new IDLE
+        """
+        # spawn Python and add to room
+        new_IDLE = IDLE(self.room, self.x, self.y + self.height/2)
+        self.room.add_room_object(new_IDLE)
+        
+        # reset timer for next Python spawn
+        IDLE_spawn_time = random.randint(30, 200)
+        self.set_timer(IDLE_spawn_time, self.spawn_IDLE)
