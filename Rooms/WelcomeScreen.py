@@ -16,3 +16,9 @@ class WelcomeScreen(Level):
         self.add_room_object(Title(self, 20, 0))
 
         self.add_room_object(Title2(self, 400, 400))
+
+        # load sounds
+        self.bg_music = self.load_sound("Music.mp3")
+        
+        # play background music
+        self.bg_music.play(loops=1)
