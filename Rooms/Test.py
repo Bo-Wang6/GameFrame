@@ -13,3 +13,5 @@ class Test (Level):
 
         # add title object
         self.add_room_object(Title3(self, 20, 0))
+
+       
