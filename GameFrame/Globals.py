@@ -34,7 +34,7 @@ class Globals:
     window_name = 'INTERSTELLAR EXPLORATION'
 
     # - Set the order of the rooms - #
-    levels = ["WelcomeScreen", "GamePlay", "Test"]
+    levels = ["WelcomeScreen", "InstructionManual", "GamePlay", "Test"]
 
     # - Set the starting level - #
     start_level = 0

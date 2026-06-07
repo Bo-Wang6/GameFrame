@@ -1,4 +1,4 @@
-from GameFrame import Level
+from GameFrame import Level,Globals
 from Objects.Title3 import Title3
 
 class Test (Level):
@@ -14,4 +14,5 @@ class Test (Level):
         # add title object
         self.add_room_object(Title3(self, 20, 0))
 
-       
+        Globals.LIVES = 3
+        Globals.SCORE = 0

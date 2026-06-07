@@ -22,3 +22,5 @@ class WelcomeScreen(Level):
         
         # play background music
         self.bg_music.play(loops=1)
+
+        

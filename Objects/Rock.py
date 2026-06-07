@@ -62,5 +62,3 @@ class Rock(RoomObject):
                 self.room.lives.update_image()
             else:
                 self.room.running = False
-                Globals.LIVES = 3
-                Globals.SCORE = 0

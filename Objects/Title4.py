@@ -1,7 +1,7 @@
-from GameFrame import RoomObject, Globals
+from GameFrame import RoomObject
 import pygame
 
-class Title3(RoomObject):
+class Title4(RoomObject):
     """
     The object for displaying the title
     """
@@ -9,7 +9,7 @@ class Title3(RoomObject):
         RoomObject.__init__(self, room, x, y)
 
         # set image
-        image = self.load_image("Title3.png")
+        image = self.load_image("Title4.png")
         self.set_image(image,0,0)
 
         # register for key events
@@ -19,7 +19,6 @@ class Title3(RoomObject):
         """
         If the key pressed is space the game will start
         """
-        
         
         if key[pygame.K_SPACE]:
             self.room.running = False

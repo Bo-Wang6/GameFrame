@@ -1,4 +1,4 @@
-from GameFrame import RoomObject
+from GameFrame import RoomObject,Globals
 import pygame
 
 class Title(RoomObject):

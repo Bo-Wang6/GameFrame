@@ -60,6 +60,11 @@ class IDLE(RoomObject):
             other.room.delete_object(self)
             if Globals.LIVES < 4:
                 self.room.lives.update_image()
-            if Globals.LIVES > 2:
+            if Globals.LIVES > 3:
                 Globals.LIVES = 3
+                self.room.score.update_score(1)
+            # if Globals.LIVES > 0:
+            #     self.room.running = False
+
+
            

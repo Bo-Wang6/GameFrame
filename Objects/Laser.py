@@ -22,6 +22,7 @@ class Laser(RoomObject):
         # handle events
         self.register_collision_object("Rock")
         self.register_collision_object("Python")
+        self.register_collision_object("IDLE")
         
     def step(self):
         """
@@ -48,8 +49,7 @@ class Laser(RoomObject):
         elif other_type == "Python":
             self.room.delete_object(other)
             self.room.score.update_score(-1)
-        if other_type == "IDLE":
+        elif other_type == "IDLE":
             self.room.delete_object(other)
-            self.room.score.update_score(+0)
         self.room.delete_object(self)
         
