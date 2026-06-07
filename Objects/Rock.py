@@ -47,7 +47,7 @@ class Rock(RoomObject):
         removes asteroid that have exited the room
         """
         if self.x + self.width < 0:
-            print("asteroid deleted")
+            print("rock deleted")
             self.room.delete_object(self)
 
     def handle_collision(self, other, other_type):
@@ -57,6 +57,7 @@ class Rock(RoomObject):
         
         if other_type == "Ship":
             self.room.delete_object(self)
+            self.room.asteroid_collision.play()
             Globals.LIVES -= 1
             if Globals.LIVES > 0:
                 self.room.lives.update_image()

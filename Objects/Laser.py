@@ -44,12 +44,15 @@ class Laser(RoomObject):
         Handles laser collisions with other registered objects
         """
         if other_type == "Rock":
+            self.room.asteroid_shot.play()
             self.room.delete_object(other)
             self.room.score.update_score(1)
         elif other_type == "Python":
+            self.room.astronaut_shot.play()
             self.room.delete_object(other)
             self.room.score.update_score(-1)
         elif other_type == "IDLE":
+            self.room.astronaut_shot.play()
             self.room.delete_object(other)
         self.room.delete_object(self)
         

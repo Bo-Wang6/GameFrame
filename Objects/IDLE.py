@@ -56,6 +56,7 @@ class IDLE(RoomObject):
         """
         
         if other_type == "Ship":
+            self.room.astronaut_saved.play()
             Globals.LIVES += 1
             other.room.delete_object(self)
             if Globals.LIVES < 4:
