@@ -1,5 +1,5 @@
 from GameFrame import Level, Globals
-from Objects.InstructionManualTitle import InstructionManualTitle
+from Objects.MissionsuccessTitle import MissionsuccessTitle
 
 class Missionsuccess (Level):
     """
@@ -12,7 +12,7 @@ class Missionsuccess (Level):
         self.set_background_image("Missionsuccess.png")
 
         # add title object
-        self.add_room_object(InstructionManualTitle(self, 20, 0))
+        self.add_room_object(MissionsuccessTitle(self, 20, 0))
 
         Globals.LIVES = 3
         Globals.SCORE = 0

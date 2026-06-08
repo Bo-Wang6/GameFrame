@@ -1,7 +1,7 @@
 from GameFrame import RoomObject, Globals
 import pygame
 
-class GameoverTitle(RoomObject):
+class MissionsuccessTitle(RoomObject):
     """
     The object for displaying the title
     """
