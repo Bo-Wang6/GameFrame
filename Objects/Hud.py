@@ -25,6 +25,9 @@ class Score(TextObject):
         Globals.SCORE += change
         self.text = str(Globals.SCORE)
         self.update_text()
+        if Globals.SCORE > 99:
+            Globals.next_level = 4
+            self.room.running = False
 
 
 class Lives(RoomObject):
@@ -50,3 +53,4 @@ class Lives(RoomObject):
         Updates the number of lives on the UI
         """
         self.set_image(self.lives_icon[Globals.LIVES], 125, 23)
+

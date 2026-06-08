@@ -21,7 +21,7 @@ class WelcomeScreen(Level):
         self.bg_music = self.load_sound("Music.mp3")
         
         # play background music
-        self.bg_music.set_volume(0.1)
+        self.bg_music.set_volume(0.4)
         self.bg_music.play(loops=1)
 
         

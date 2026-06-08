@@ -37,7 +37,7 @@ class Python(RoomObject):
         if other_type == "Ship":
             self.room.astronaut_saved.play()
             self.room.delete_object(self)
-            self.room.score.update_score(2)
+            self.room.score.update_score(40)
             
     def outside_of_room(self):
         """

@@ -66,9 +66,7 @@ class IDLE(RoomObject):
                 self.room.score.update_score(1)
             # if Globals.LIVES > 0:
             #     self.room.running = False
-            if Globals.SCORE < 100:
-                Globals.next_level = 4
-                self.room.running = False
+
 
 
            
