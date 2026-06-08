@@ -1,7 +1,7 @@
 from GameFrame import Level,Globals
-from Objects.Title3 import Title3
+from Objects.GameoverTitle import GameoverTitle
 
-class Test (Level):
+class Gameover (Level):
     """
     Intial screen for the game
     """
@@ -12,7 +12,7 @@ class Test (Level):
         self.set_background_image("Over.png")
 
         # add title object
-        self.add_room_object(Title3(self, 20, 0))
+        self.add_room_object(GameoverTitle(self, 20, 0))
 
         Globals.LIVES = 3
         Globals.SCORE = 0

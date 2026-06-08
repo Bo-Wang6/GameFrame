@@ -37,6 +37,8 @@ class Ship(RoomObject):
             self.x += 7.5
         if key[pygame.K_SPACE]:
             self.shoot_laser()
+
+        
     
     def keep_in_room(self):
         """

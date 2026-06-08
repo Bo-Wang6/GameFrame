@@ -1,6 +1,6 @@
 from GameFrame import Level
-from Objects.Title import Title
-from Objects.Title2 import Title2
+from Objects.WelcomeScreenTitle import WelcomeScreenTitle
+from Objects.WelcomeScreenTitle2 import WelcomeScreenTitle2
 
 class WelcomeScreen(Level):
     """
@@ -13,9 +13,9 @@ class WelcomeScreen(Level):
         self.set_background_image("Background.png")
 
         # add title object
-        self.add_room_object(Title(self, 20, 0))
+        self.add_room_object(WelcomeScreenTitle(self, 20, 0))
 
-        self.add_room_object(Title2(self, 400, 400))
+        self.add_room_object(WelcomeScreenTitle2(self, 400, 400))
 
         # load sounds
         self.bg_music = self.load_sound("Music.mp3")

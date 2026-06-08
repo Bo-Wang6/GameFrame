@@ -1,7 +1,7 @@
 from GameFrame import RoomObject
 import pygame
 
-class Title4(RoomObject):
+class WelcomeScreenTitle2(RoomObject):
     """
     The object for displaying the title
     """
@@ -9,8 +9,8 @@ class Title4(RoomObject):
         RoomObject.__init__(self, room, x, y)
 
         # set image
-        image = self.load_image("Title4.png")
-        self.set_image(image,0,0)
+        image = self.load_image("Title2.png")
+        self.set_image(image,500,50)
 
         # register for key events
         self.handle_key_events = True 
